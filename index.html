@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> App De Gstion de Tareas </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--  Linck de refercia para estilos de la tipografi-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Tipó de letra  -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">  <!-- Tipo de tipografia-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="stayls.css">
+</head>
+<body>
+
+    <div class="container">
+    <!-- Ubicacion para todo el tema de nombre y fecha -->
+    <div class="perfil">
+        
+        <img class="Logo" src="imgs/img-perfil.png" alt="">
+        <div id="fecha"></div>
+        <h1  >Hola, Juan Gabriel Bienvenido </h1>
+        <samp> Vamos A  Gationar tus Tareas Pendeintes </samp>
+    </div>
+    <!-- seccio dnd esta ubicado  cuado de texto y boton de agragra tarea -->
+    <div class="agregar-tarea">
+        <input type="text" id="descripcion" placeholder="Agregar Tarea">
+        <i id="agregar"  class="fa fa-plus-circle"></i>
+    </div>
+    <!-- Secion donde se mostrar  todas las  tareaas guardas -->
+    <div class="seccion-tareas">
+        <ul id="lista">
+
+        </ul>
+    </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

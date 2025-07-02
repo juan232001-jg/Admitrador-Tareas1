@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* Colores para variables globales  dentros de toda la intergas */
+:root{
+    --white: #FAFAFB;
+     --purple:#9a67ea;
+   --blue-light:#04d4c3;
+   --blue-dark:#2a73c2;
+   --green: #2c7b90;
+}
+/* Color de fondo de mi pagina principal  */
+body{
+    background: linear-gradient(to bottom,var(--purple),var(--blue-light)); /*  Color de fonto para toda  pagina*/
+    height: 100vh;
+    font-family: 'prompt' sans-serif;
+}
+
+.container{
+    max-width: 80%;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+}
+img{
+
+  width: 120px;         /* Tamaño de la imagen */
+  height: 120px;
+  object-fit: cover;    /* Asegura que la imagen se recorte bien */
+  border-radius: 50%;   /* Hace la imagen redonda */
+  border: 5px solid #04d4c3; /* Borde gris claro opcional */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+  display: block;
+  margin: 50px;;       /* Centrar horizontalmente */
+}
+
+#fecha{
+    color: var(--white); 
+    padding: 50px 0 5px 0px;
+    text-transform: uppercase;
+}
+
+.perfil h1 {
+    color: var(--white);
+   
+}
+
+.perfil samp{
+    color: var(--white);
+    letter-spacing: 1px;
+}
