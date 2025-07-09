@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Idioma de la página: inglés (puedes cambiarlo a "es" si prefieres) -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> App De Gstion de Tareas </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--  Linck de refercia para estilos de la tipografi-->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Tipó de letra  -->
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">  <!-- Tipo de tipografia-->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres en formato UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala responsiva para dispositivos móviles -->
+    <title>App De Gestión de Tareas</title> <!-- Título que se muestra en la pestaña del navegador -->
+    <!-- Carga anticipada de fuentes desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Conexión anticipada para mejorar velocidad -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Para cargar fuentes externas de forma segura -->
+    <!-- Fuente personalizada desde Google Fonts: "Prompt" -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Íconos de Font Awesome para usar íconos como "+" o "papelera" -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="stayls.css">
+    <!-- Hoja de estilos personalizada (archivo CSS externo) -->
+    <link rel="stylesheet" href="stayls.css"> <!-- Revisa que esté bien escrito: "styles.css" -->
 </head>
 <body>
-
-    <div class="container">
-    <!-- Ubicacion para todo el tema de nombre y fecha -->
-    <div class="perfil">
-        
-        <img class="Logo" src="imgs/img-perfil.png" alt="">
-        <div id="fecha"></div>
-        <h1  >Hola, Juan Gabriel Bienvenido </h1>
-        <samp> Vamos A  Gationar tus Tareas Pendeintes </samp>
+    <div class="container"> <!-- Contenedor principal que agrupa todo el contenido -->
+        <!-- SECCIÓN PERFIL DEL USUARIO Y FECHA -->
+        <div class="perfil">
+            <!-- Imagen del perfil del usuario (ajusta la ruta si es necesario) -->
+            <img class="Logo" src="imgs/img-perfil.png" alt=""> 
+            <!-- Fecha actual (se inserta desde JavaScript) -->
+            <div id="fecha"></div>
+            <!-- Mensaje de bienvenida personalizado -->
+            <h1>Hola, Juan Gabriel. Bienvenido</h1>
+            <!-- Subtítulo motivador -->
+            <samp>Vamos a gestionar tus tareas pendientes</samp> <!-- OJO: la etiqueta correcta aquí sería <span> -->
+        </div>
+        <!-- SECCIÓN PARA AGREGAR NUEVAS TAREAS -->
+        <div class="agregar-tarea">
+            <!-- Campo de texto donde el usuario escribe la nueva tarea -->
+            <input type="text" id="descripcion" placeholder="Agregar Tarea">
+            <!-- Ícono "+" que actúa como botón para agregar la tarea -->
+            <i id="agregar" class="fa fa-plus-circle"></i>
+        </div>
+        <!-- SECCIÓN DE LISTA DE TAREAS PENDIENTES -->
+        <div class="seccion-tareas">
+            <!-- Título de la sección -->
+            <h3>Estas son tus Tareas Pendientes</h3>
+            <!-- Lista UL donde se mostrarán dinámicamente las tareas -->
+            <ul id="lista"></ul> <!-- El contenido se llenará con JS -->
+        </div>
     </div>
-    <!-- seccio dnd esta ubicado  cuado de texto y boton de agragra tarea -->
-    <div class="agregar-tarea">
-        <input type="text" id="descripcion" placeholder="Agregar Tarea">
-        <i id="agregar"  class="fa fa-plus-circle"></i>
-    </div>
-    <!-- Secion donde se mostrar  todas las  tareaas guardas -->
-    <div class="seccion-tareas">
-        <ul id="lista">
-
-        </ul>
-    </div>
-    </div>
+    <!-- Script principal que maneja toda la lógica de tareas -->
     <script src="index.js"></script>
 </body>
 </html>

@@ -1,53 +1,179 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-/* Colores para variables globales  dentros de toda la intergas */
-:root{
-    --white: #FAFAFB;
-     --purple:#9a67ea;
-   --blue-light:#04d4c3;
-   --blue-dark:#2a73c2;
-   --green: #2c7b90;
-}
-/* Color de fondo de mi pagina principal  */
-body{
-    background: linear-gradient(to bottom,var(--purple),var(--blue-light)); /*  Color de fonto para toda  pagina*/
-    height: 100vh;
-    font-family: 'prompt' sans-serif;
+/* Reseteo general para eliminar márgenes y paddings por defecto del navegador */
+* {
+  box-sizing: border-box; /* El padding y el borde se incluyen dentro del tamaño total del elemento */
+  padding: 0;             /* Elimina relleno por defecto */
+  margin: 0;              /* Elimina márgenes por defecto */
 }
 
-.container{
-    max-width: 80%;
-    width: 400px;
-    height: 600px;
-    margin: 0 auto;
-}
-img{
-
-  width: 120px;         /* Tamaño de la imagen */
-  height: 120px;
-  object-fit: cover;    /* Asegura que la imagen se recorte bien */
-  border-radius: 50%;   /* Hace la imagen redonda */
-  border: 5px solid #04d4c3; /* Borde gris claro opcional */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
-  display: block;
-  margin: 50px;;       /* Centrar horizontalmente */
+/* Declaración de variables globales de color y sombra para reutilización */
+:root {
+  --white: #FAFAFB;         /* Blanco suave, para fondos y textos */
+  --purple: #9a67ea;        /* Púrpura principal */
+  --blue-light: #04d4c3;    /* Azul claro para detalles */
+  --blue-dark: #2a73c2;     /* Azul oscuro para contrastes */
+  --green: #2c7b90;         /* Verde azulado para combinaciones con azul */
+  --shadow: rgba(0, 0, 0, 0.2); /* Sombra gris semitransparente */
 }
 
-#fecha{
-    color: var(--white); 
-    padding: 50px 0 5px 0px;
-    text-transform: uppercase;
+/* Estilos generales del body (fondo, alineación y fuente) */
+body {
+  background: linear-gradient(to bottom, var(--purple), var(--blue-light)); /* Degradado vertical */
+  height: 100vh;                        /* Altura de pantalla completa */
+  font-family: 'Prompt', sans-serif;   /* Fuente general */
+  display: flex;                        /* Para centrar el contenedor */
+  align-items: center;                 /* Centrado vertical */
+  justify-content: center;            /* Centrado horizontal */
+  padding: 20px;                       /* Espaciado interior del body */
+  color: var(--white);                 /* Color de texto blanco general */
 }
 
+/* Contenedor principal del contenido */
+.container {
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo semitransparente tipo glassmorphism */
+  border-radius: 20px;                         /* Bordes redondeados */
+  padding: 30px;                               /* Espacio interior */
+  width: 100%;                                 /* Ancho completo */
+  max-width: 420px;                            /* Máximo ancho */
+  box-shadow: 0 8px 20px var(--shadow);        /* Sombra exterior */
+  backdrop-filter: blur(6px);                  /* Difuminado de fondo (efecto vidrio) */
+}
+
+/* Sección del perfil de usuario */
+.perfil {
+  text-align: center;        /* Centrado del contenido */
+  margin-bottom: 30px;       /* Espacio inferior */
+}
+
+/* Imagen de perfil */
+img {
+  width: 120px;              /* Ancho fijo */
+  height: 120px;             /* Alto fijo */
+  object-fit: cover;         /* Ajusta sin deformar */
+  border-radius: 50%;        /* Forma circular */
+  border: 5px solid var(--blue-light); /* Borde de color */
+  box-shadow: 0 4px 8px var(--shadow); /* Sombra suave */
+  margin: 20px auto;         /* Margen con centrado horizontal */
+}
+
+/* Fecha (día actual mostrado arriba) */
+#fecha {
+  color: var(--white);       /* Texto blanco */
+  font-weight: 600;          /* Negrita */
+  margin-bottom: 5px;        /* Separación inferior */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  font-size: 0.9rem;         /* Tamaño del texto */
+}
+
+/* Título de bienvenida */
 .perfil h1 {
-    color: var(--white);
-   
+  font-size: 1.4rem;         /* Tamaño mediano del texto */
+  margin: 10px 0 5px 0;      /* Márgenes verticales */
 }
 
-.perfil samp{
-    color: var(--white);
-    letter-spacing: 1px;
+/* Subtítulo bajo el nombre */
+.perfil samp {
+  display: block;            /* Se comporta como bloque para aplicar espaciado */
+  font-size: 0.95rem;        /* Tamaño del texto */
+  letter-spacing: 1px;       /* Espaciado entre letras */
+  color: var(--white);       /* Color blanco */
+}
+
+/* Contenedor de la caja para ingresar tareas */
+.agregar-tarea {
+  background-color: var(--white);     /* Fondo blanco */
+  border-radius: 15px;                /* Bordes redondeados */
+  height: 60px;                       /* Altura fija */
+  display: flex;                      /* Elementos en línea */
+  align-items: center;               /* Centrado vertical */
+  gap: 15px;                         /* Separación entre input y botón */
+  padding: 10px 15px;                /* Espaciado interior */
+  margin: 20px 0;                    /* Espaciado vertical externo */
+  box-shadow: 0 4px 10px var(--shadow); /* Sombra ligera */
+}
+
+/* Input de texto donde se escribe la tarea */
+.agregar-tarea input {
+  width: 100%;              /* Ocupar todo el espacio disponible */
+  height: 100%;             /* Igual altura que el contenedor */
+  border-radius: 8px;       /* Bordes redondeados */
+  border: none;             /* Sin borde */
+  outline: none;            /* Sin resaltado azul al enfocar */
+  background-color: var(--white); /* Fondo blanco */
+  padding: 0 10px;          /* Espacio a los lados dentro del input */
+  font-size: 1rem;          /* Tamaño de fuente */
+  color: var(--purple);     /* Texto púrpura */
+}
+
+/* Texto gris dentro del input (placeholder) */
+.agregar-tarea input::placeholder {
+  color: var(--purple);     /* Color del texto de ayuda */
+  font-size: 1.1rem;        /* Tamaño un poco mayor */
+}
+
+/* Ícono de agregar tarea (el +) */
+.agregar-tarea i {
+  font-size: 30px;          /* Tamaño del ícono */
+  color: var(--purple);     /* Color púrpura */
+  transition: transform 0.2s ease; /* Transición al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse por el ícono */
+.agregar-tarea i:hover {
+  transform: scale(1.2);    /* Aumenta tamaño */
+  cursor: pointer;          /* Cambia el cursor */
+}
+
+/* Título de sección de tareas */
+.seccion-tareas h3 {
+  margin-bottom: 10px;      /* Espacio inferior */
+  font-size: 1.2rem;        /* Tamaño del texto */
+  color: var(--white);      /* Color del texto */
+}
+
+/* Línea divisoria */
+.seccion-tareas hr {
+  border: 1px solid var(--purple); /* Línea púrpura */
+  margin-bottom: 10px;             /* Espacio inferior */
+}
+
+/* Lista sin viñetas */
+.seccion-tareas ul {
+  list-style: none;         /* Elimina los puntos de lista */
+}
+
+/* Cada tarea (línea individual) */
+.seccion-tareas li {
+  display: flex;                          /* En línea */
+  align-items: center;                    /* Centrado vertical */
+  justify-content: space-between;        /* Espaciado entre texto y botón */
+  background: linear-gradient(to bottom, var(--blue-dark), var(--green)); /* Fondo con degradado */
+  border-radius: 12px;                    /* Bordes redondeados */
+  padding: 10px 15px;                     /* Espacio interno */
+  margin-bottom: 10px;                    /* Separación entre tareas */
+  font-size: 1rem;                        /* Tamaño del texto */
+  box-shadow: 0 2px 6px var(--shadow);    /* Sombra suave */
+  transition: all 0.3s ease;             /* Animación de hover */
+}
+
+/* Efecto al pasar el mouse sobre una tarea */
+.seccion-tareas li:hover {
+  transform: scale(1.02);    /* Ligeramente más grande */
+}
+
+/* Iconos dentro de cada tarea */
+.seccion-tareas i {
+  font-size: 22px;           /* Tamaño del ícono */
+  transition: color 0.3s ease; /* Cambio de color suave */
+}
+
+/* Cambio de color al pasar el mouse */
+.seccion-tareas i:hover {
+  color: var(--blue-light);  /* Azul claro */
+  cursor: pointer;           /* Cursor en forma de mano */
+}
+
+/* Estilo cuando una tarea se marca como completada */
+.line-through {
+  text-decoration: line-through; /* Tacha el texto */
+  color: var(--blue-light);      /* Cambia color para indicar completado */
 }
